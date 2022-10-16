@@ -1,7 +1,7 @@
 # pyfiles
 Pyfiles allows you to easily manage and download files
 
-# Installing the module
+## Installing the module
 To install the module do the following:
 ```sh
 # Linux/macOS
@@ -11,7 +11,7 @@ python3 -m pip install pyfiles
 py -3 -m pip install pyfiles
 ```
 
-# Example usage
+## Example usage
 **WARNING: not implemented, a showcase what this module will do**
 ```py
 import pyfiles as files
