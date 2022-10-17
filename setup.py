@@ -12,21 +12,21 @@ packages = [
 ]
 
 setup(
-    name="py-files",
+    name="filesmanager",
     author="konradsic",
-    url='https://github.com/konradsic/pyfiles',
+    url='https://github.com/konradsic/filemanager',
     project_urls = {
-        "Issues and bugs": "https://github.com/konradsic/pyfiles/issues"
+        "Issues and bugs": "https://github.com/konradsic/filemanager/issues"
     },
     version=version,
     packages=packages,
     license='MIT',
-    description='A python package allowing users to easy manipulate and download files.',
+    description='A python package allowing users to easly manipulate and download files.',
     long_description=long_description,
     long_description_content_type="text/markdown",
     include_package_data=True,
     install_requires=requirements,
-    keywords = ["python", "files", "pyfiles", "file manipulation"],
+    keywords = ["python", "files", "pyfiles", "file manipulation", "file", "filemanager"],
     python_requires='>=3.7.0',
     classifiers=[
         'Development Status :: 1 - Planning',
