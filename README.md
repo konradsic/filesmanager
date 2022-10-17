@@ -1,5 +1,5 @@
-# filemanager
-Filemanager is a python module that allows you to easily manage and download files
+# filesmanager
+Filesmanager is a python module that allows you to easily manage and download files
 
 ## Installing the module
 To install the module do the following:
@@ -14,7 +14,7 @@ py -3 -m pip install filemanager
 ## Example usage
 **WARNING: not implemented, a showcase what this module will do**
 ```py
-import filemanager as filemgr
+import filesmanager as filemgr
 
 file_manager = filemgr.FileManager(path="./") # initialize file manager
 file_manager.download("https://example.com/downloads/file.txt")

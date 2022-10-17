@@ -8,7 +8,7 @@ with open("README.md", mode="r") as readme_file:
     long_description = readme_file.read()
 
 packages = [
-    "pyfiles"
+    "filesmanagers"
 ]
 
 setup(
