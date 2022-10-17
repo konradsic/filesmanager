@@ -9,3 +9,44 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
+from dataclasses import dataclass
+import typing as t
+
+@dataclass
+class DownloadSource:
+    """
+    Represents a download source.
+
+    Attributes
+    ----------
+    url: :class:`str`
+        A url of the source
+    uri: :class:`str`
+        URI of the source (contains http or https and url)
+    https: :class:`bool`
+        Tells if the source is protected by the https protocol or not
+    children: :class:`list[str] | None`
+        If they exist the so-called "children" are multiple filenames whose parent is the url (eg. children are ["file1","file2"] the program will download `url/child` for every child given)
+    """
+    url: str
+    uri: bool
+    https: bool
+    children: t.Optional[t.List[str]]
+
+@dataclass
+class ReturnInformation:
+    """
+    Represents a set of informations returned from a function, wrapped into a dataclass
+
+    Parameters
+    ----------
+    title: :class:`str`
+        The title of return information
+    description: :class:`str`
+        A short description of the return information
+    code: :class:`int`
+        Status code of returned informations. Defaults to -1 to indicate there was no code or errors
+    """
+    title: str
+    description: str
+    code: int = -1

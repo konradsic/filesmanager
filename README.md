@@ -5,10 +5,10 @@ Filesmanager is a python module that allows you to easily manage and download fi
 To install the module do the following:
 ```sh
 # Linux/macOS
-python3 -m pip install filemanager
+python3 -m pip install filesmanager
 
 # Windows
-py -3 -m pip install filemanager
+py -3 -m pip install filesmanager
 ```
 
 ## Example usage
@@ -22,5 +22,5 @@ file_manager.showtree() # show directory tree
 ````
 You can also use this module directly in the terminal
 ```sh
-python3 -m filemanager showtree
+python3 -m filesmanager showtree
 ```
