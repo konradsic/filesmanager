@@ -1,5 +1,5 @@
 # filesmanager
-Filesmanager is a python module that allows you to easily manage and download files
+Filesmanager is a python module that allows you to easily manage and download files. Fast and lightweight construction allows you to manipulate files faster and more easily
 
 ## Installing the module
 To install the module do the following:
