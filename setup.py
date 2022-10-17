@@ -12,7 +12,7 @@ packages = [
 ]
 
 setup(
-    name="pyfiles",
+    name="py-files",
     author="konradsic",
     url='https://github.com/konradsic/pyfiles',
     project_urls = {
@@ -26,6 +26,7 @@ setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     install_requires=requirements,
+    keywords = ["python", "files", "pyfiles", "file manipulation"],
     python_requires='>=3.7.0',
     classifiers=[
         'Development Status :: 1 - Planning',

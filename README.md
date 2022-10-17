@@ -5,10 +5,10 @@ Pyfiles allows you to easily manage and download files
 To install the module do the following:
 ```sh
 # Linux/macOS
-python3 -m pip install pyfiles
+python3 -m pip install py-files
 
 # Windows
-py -3 -m pip install pyfiles
+py -3 -m pip install py-files
 ```
 
 ## Example usage
