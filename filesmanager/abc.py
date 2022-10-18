@@ -29,24 +29,6 @@ class DownloadSource:
         If they exist the so-called "children" are multiple filenames whose parent is the url (eg. children are ["file1","file2"] the program will download `url/child` for every child given)
     """
     url: str
-    uri: bool
+    uri: str
     https: bool
     children: t.Optional[t.List[str]]
-
-@dataclass
-class ReturnInformation:
-    """
-    Represents a set of informations returned from a function, wrapped into a dataclass
-
-    Parameters
-    ----------
-    title: :class:`str`
-        The title of return information
-    description: :class:`str`
-        A short description of the return information
-    code: :class:`int`
-        Status code of returned informations. Defaults to -1 to indicate there was no code or errors
-    """
-    title: str
-    description: str
-    code: int = -1

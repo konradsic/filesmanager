@@ -9,7 +9,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 """
 import typing as t
 import requests
-from .abc import DownloadSource, ReturnInformation
+from .abc import DownloadSource
 from .errors import SourceConvertError, DownloadError
 
 class DownloadManager:
@@ -24,7 +24,7 @@ class DownloadManager:
         A base URL where files will be downloaded from. Can be either a base link to a resource (eg. https://resourceful.com/resources) or a direct link to a file (https://files.org/file/cf540s9d.png). Please note that you shouldn'y visit any of these sites they are just examples
     https: :class:`bool`
         Indicates wherever the source is secure or not. Defaults to True may cause errors when downloading
-    chilren: :class:``list[DownloadSource] | []`
+    chilren: :class:``list[str] | []`
         "Children" of the source to be downloaded. If none are provided, the program will download only from uri, chilren can be used to download multiple sources from the root url. If argument is empty it will set chilren to an empty list
 
     Attributes
@@ -36,7 +36,7 @@ class DownloadManager:
         self, 
         source_link: str,
         https: bool=True,
-        children: t.Union[t.List[DownloadSource], t.List]=[]
+        children: t.Optional[t.List[str]]=[]
     ) -> None:
         url = ""
         uri = ""
@@ -68,8 +68,8 @@ class DownloadManager:
         self,
         url: str,
         uri: t.Optional[str]=None,
-        https: t.Optional[bool]=True,
-        children: t.Optional[t.List[DownloadSource]]=[]
+        https: bool=True,
+        children: t.Optional[t.List[str]]=[]
     ) -> DownloadSource:
         try:
             uri = f"{'https' if https else 'http'}://{url}{'/' if not url.endswith('/') else ''}"
@@ -112,8 +112,10 @@ class DownloadManager:
                         info += f"Failed to load resource {q} caused by {e.__class__.__name__}:{e}\n"
                         continue
         except Exception as e:
-            DownloadError(f"Download failed because of {e.__class__.__name__}: {e}")
-        return ReturnInformation("Results for downloading files", info)
+            raise DownloadError(f"Download failed because of {e.__class__.__name__}: {e}")
+        if info != "":
+            raise DownloadError("Resource downloading failed: \n" + info)
+        return True
 
     def __str__(self):
         return f"<DownloadManager url={self.source.url} uri={self.source.uri} https={self.source.https} sources={self.sources}>"
